@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-function MyNavbar() {
+function Navbar() {
   const [isMobile, setIsMobile] = React.useState<boolean>(false);
 
   return (
@@ -57,4 +57,4 @@ function MyNavbar() {
   );
 }
 
-export default MyNavbar;
+export default Navbar;

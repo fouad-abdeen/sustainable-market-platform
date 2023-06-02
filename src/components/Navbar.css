@@ -31,7 +31,7 @@ h1 {
 .brand {
   display: flex;
   margin-right: auto;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 ul {
@@ -61,7 +61,7 @@ li {
   cursor: pointer;
   background-color: white;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .signup-button:hover {
@@ -74,7 +74,7 @@ a {
 }
 
 .nav-item {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .nav-item:hover {
@@ -85,7 +85,7 @@ a {
   display: none;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .nav-links {
     display: none;
   }
@@ -121,7 +121,7 @@ a {
   }
 
   .brand {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   .mobile-menu-icon {
@@ -134,9 +134,9 @@ a {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 520px) {
   .brand {
-    font-size: 0.45rem;
+    font-size: 0.6rem;
   }
 
   .mobile-menu-icon {
@@ -145,10 +145,24 @@ a {
   }
 
   .nav-item {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   .signup-button-mobile {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .brand {
+    font-size: 0.45rem;
+  }
+
+  .nav-item {
+    font-size: 0.7rem;
+  }
+
+  .signup-button-mobile {
+    font-size: 0.7rem;
   }
 }
