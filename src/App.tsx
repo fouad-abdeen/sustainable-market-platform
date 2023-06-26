@@ -1,10 +1,16 @@
 import "./App.css";
-import MyNavbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Items from "./pages/Items";
 
 function App() {
   return (
     <>
-      <MyNavbar />
+      <Navbar />
+
+      <Items />
+
+      {/* <Footer /> */}
     </>
   );
 }

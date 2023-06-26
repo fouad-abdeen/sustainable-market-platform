@@ -4,7 +4,7 @@ function Footer() {
   return (
     <>
       <footer>
-        <div className="container">
+        <div className="footer-container">
           <div className="footer-item">
             <a href="#" className="footer-link">
               About Us
@@ -41,7 +41,9 @@ function Footer() {
             </a>
           </div>
         </div>
-        <p className="copyright">&copy; 2023 The Sustainable Community. All rights reserved.</p>
+        <p className="copyright">
+          &copy; 2023 The Sustainable Community. All rights reserved.
+        </p>
       </footer>
     </>
   );

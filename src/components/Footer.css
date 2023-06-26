@@ -10,7 +10,7 @@ footer {
   width: 100%;
 }
 
-.container {
+.footer-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@ footer {
   footer {
     height: 125px;
   }
-  
+
   .copyright {
     position: relative;
     top: 25px;
@@ -91,12 +91,12 @@ footer {
   }
 
   @media screen and (max-width: 375px) {
-     .footer-item {
+    .footer-item {
       font-size: 0.7rem;
-     }
+    }
 
-     .copyright {
+    .copyright {
       font-size: 0.6rem;
-     }
+    }
   }
 }
