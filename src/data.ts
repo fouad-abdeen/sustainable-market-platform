@@ -40,3 +40,45 @@ export const itemCards = [
     favorite: false,
   },
 ];
+
+export const newVendors = [
+  {
+    id: 1,
+    name: "Vendor 1",
+    description: "Description of Vendor 1",
+    image:
+      "https://images-platform.99static.com//ZkYtJAsgMT9YJ6jt7fZK-tRbW8s=/0x0:2040x2040/fit-in/500x500/99designs-contests-attachments/125/125936/attachment_125936759", // URL or path to vendor's image
+  },
+  {
+    id: 2,
+    name: "Vendor 2",
+    description: "Description of Vendor 2",
+    image: "https://i.etsystatic.com/11056442/r/il/7ef32e/3204001537/il_fullxfull.3204001537_4ziw.jpg",
+  },
+  {
+    id: 3,
+    name: "Vendor 3",
+    description: "Description of Vendor 3",
+    image: "https://images-platform.99static.com//CNEVJb2jXc_dRDZYZZLeD6OQ_VM=/78x10:591x523/fit-in/500x500/projects-files/97/9788/978890/f846f92c-3225-4d4c-8c60-56e1f8d5bc24.png",
+  },
+];
+export const servicesData = [
+  {
+    id: 1,
+    title: 'Eco-Friendly Products',
+    description: 'Explore a wide range of sustainable and eco-friendly products.',
+    icon: 'https://static.vecteezy.com/system/resources/previews/013/965/458/original/eco-green-eco-friendly-icon-recycle-logo-packaging-renewable-symbol-green-environmentally-sign-vector.jpg', // Replace with actual image path or icon class
+  },
+  {
+    id: 2,
+    title: 'Fair Trade Partnerships',
+    description: 'Support fair trade practices with our ethical partnerships.',
+    icon: 'https://www.pngitem.com/pimgs/m/265-2650663_green-trade-fair-trade-marketing-icon-png-transparent.png',
+  },
+  {
+    id: 3,
+    title: 'Recycling Services',
+    description: 'Efficient recycling solutions for a greener environment.',
+    icon: 'https://img.freepik.com/premium-vector/green-recycling-symbol-icon-eco-cycle-elimination-garbage_572038-206.jpg',
+  },
+];

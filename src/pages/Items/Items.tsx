@@ -1,5 +1,5 @@
-import Card from "../components/Card";
-import { itemCards } from "../data";
+import Card from "../../components/Card";
+import { itemCards } from "../../data";
 import "./Items.css";
 
 function Items() {
