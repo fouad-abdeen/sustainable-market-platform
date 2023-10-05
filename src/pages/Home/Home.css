@@ -10,7 +10,12 @@
     text-align: center;
     color: black;
   }
-  
+  .slogan{
+    background-color: #5cb25d;
+    color: white;
+    padding: 2%;
+    border-radius: 15px;
+  }
   h1 {
     font-size: 3rem;
     margin-bottom: 20px;

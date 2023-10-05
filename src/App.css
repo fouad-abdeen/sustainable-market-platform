@@ -4,7 +4,10 @@
   padding: 2rem;
   text-align: center;
 } */
-
+.main{
+  min-height: calc(100vh - 100px); /* Adjust the 100px to match your footer's height */
+  position: relative;
+}
 /* .logo {
   height: 6em;
   padding: 1.5em;
