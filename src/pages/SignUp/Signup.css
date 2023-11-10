@@ -1,0 +1,85 @@
+.main {
+  display: flex;
+}
+
+.image-container {
+  flex-basis: 40%;
+  height: 100%;
+  background-image: url("../assets/restaurant.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.form-container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 56px;
+  flex: 1 0 60%;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.new-user {
+  color: #878787;
+}
+
+.form-input {
+  width: 80%;
+  height: 45px;
+  border: none;
+  background-color: #f5eedc;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+.form-group {
+  color: #878787;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+  h2 {
+    line-height: 1.4em;
+  }
+
+  .image-container {
+    background-image: url("./restaurant.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    z-index: 1;
+  }
+
+  .form-container {
+    z-index: 2;
+    flex-basis: 100%;
+    align-items: center;
+    height: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+    color: white;
+  }
+}
+
+.signup-show-password-button {
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+}

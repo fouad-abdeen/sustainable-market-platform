@@ -1,0 +1,201 @@
+html {
+  min-height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+nav {
+  color: #f5eedc;
+  padding: 20px 40px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5cb25d;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.brand a {
+  padding-right: 10px;
+}
+
+.brand {
+  display: flex;
+  margin-left: 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  padding-right: 20px;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.signup-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 35px;
+  color: #5cb25d;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-right: 90px;
+}
+
+.signup-button:hover {
+  scale: 1.05;
+}
+
+a {
+  color: #f5eedc;
+  text-decoration: none;
+}
+
+.Nav-item:hover {
+  scale: 1.1;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 350px) {
+  .brand img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .brand {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  .brand a h1 {
+    font-size: 1.2rem;
+  }
+
+  .brand img {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    color: #f5eedc;
+    border: none;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+
+  .nav-links-mobile {
+    position: absolute;
+    padding: 30px;
+    display: block;
+    list-style: none;
+    background-color: #5cb25d;
+    width: 100%;
+    left: 0;
+    top: 64px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-item {
+    color: #f5eedc;
+    text-align: center;
+    transition: all 0.5s ease;
+    margin: 30px;
+  }
+
+  .brand {
+    font-size: small;
+  }
+
+  .mobile-menu-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 50px;
+  }
+
+  .dropdown-content {
+    font-size: 14px;
+    min-width: 120px;
+  }
+
+  .signup-button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .dropdown {
+    margin-right: 180px;
+  }
+
+  .dropdown-content {
+    min-width: 160px;
+  }
+
+  .signup-button-mobile {
+    display: none;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #5cb25d;
+}
+
+.dropdown:hover {
+  scale: 1.05;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

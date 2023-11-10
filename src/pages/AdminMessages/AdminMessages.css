@@ -1,0 +1,23 @@
+.admin-messages {
+  padding: 20px;
+}
+
+.message-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete-message {
+  color: #dd4a48;
+  cursor: pointer;
+}

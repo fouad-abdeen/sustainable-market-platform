@@ -1,0 +1,15 @@
+.not-found {
+  text-align: center;
+  padding: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.not-found h1 {
+  font-size: 2em;
+  color: #5cb25d;
+}
+
+p {
+  font-size: 1.2em;
+  color: #333;
+}

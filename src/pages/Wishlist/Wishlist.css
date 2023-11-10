@@ -1,0 +1,17 @@
+.wishlist-container {
+  border-radius: 5px;
+  height: 100%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}

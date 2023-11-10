@@ -1,188 +1,192 @@
-/* src/HeroSection.css */
-
 .hero-container {
-    background: url('https://images.pexels.com/photos/3850512/pexels-photo-3850512.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    color: black;
-  }
-  .slogan{
-    background-color: #5cb25d;
-    color: white;
-    padding: 2%;
-    border-radius: 15px;
-  }
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-  }
-  
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #00b894;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #018c6a;
-  }
-  /* NewVendorsSection.css */
+  background: url("https://images.pexels.com/photos/3850512/pexels-photo-3850512.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+    center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: black;
+}
 
-.new-vendors-section {
-    background-color: #f7f7f7;
-    padding: 50px 0;
-    text-align: center;
-  }
-  
-  .new-vendors-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .vendor-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .vendor-card {
-    flex: 0 1 calc(30% - 20px); /* Three cards per row with spacing */
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .vendor-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .vendor-card h3 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-  
-  .vendor-card p {
-    font-size: 1rem;
-    color: #666;
-  }
-  /* OurServicesSection.css */
+.slogan {
+  background-color: #5cb25d;
+  color: white;
+  padding: 2%;
+  border-radius: 15px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #00b894;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #018c6a;
+}
+
+.new-sellers-section {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.new-sellers-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.seller-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.seller-card {
+  flex: 0 1 calc(30% - 20px);
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.seller-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.seller-card h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.seller-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.read-more-description:hover {
+  color: #5cb25d;
+}
 
 .our-services-section {
-    padding: 50px 0;
-    text-align: center;
-    background-color: #f7f7f7
-  }
-  
-  .our-services-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .service-cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .service-card {
-    flex: 0 1 calc(30% - 20px); /* Three cards per row with spacing */
-    background-color: #f7f7f7;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .service-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-  }
-  
-  .service-card h3 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-  
-  .service-card p {
-    font-size: 1rem;
-    color: #666;
-  }
-  /* AboutUsSection.css */
+  padding: 50px 0;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.our-services-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  flex: 0 1 calc(30% - 20px);
+  background-color: #f7f7f7;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+}
 
 .about-us-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2% 12%;
-    background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2% 12%;
+  background-color: #f7f7f7;
+}
+
+.about-us-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about-us-card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.about-us-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    background-size: cover;
   }
-  
-  .about-us-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .about-us-card h2 {
+
+  h1 {
     font-size: 2rem;
-    margin-bottom: 10px;
-    color: #333;
   }
-  
-  .about-us-card p {
-    font-size: 1rem;
-    color: #666;
+
+  p {
+    font-size: 1.2rem;
   }
-  
-  
-  @media (max-width: 768px) {
-    /* Styles for screens with a maximum width of 768px */
-    .hero-container {
-      background-size: cover; /* Adjust background size as needed */
-    }
-    h1 {
-      font-size: 2rem; /* Decrease font size for smaller screens */
-    }
-    p {
-      font-size: 1.2rem; /* Decrease font size for smaller screens */
-    }
-    .vendor-card, .service-card{
-        flex: 0 1 calc(50% - 20px); /* Two cards per row with spacing */
-      }
+
+  .seller-card,
+  .service-card {
+    flex: 0 1 calc(50% - 20px);
   }
-    /* Responsive CSS for even smaller screens */
-    @media (max-width: 576px) {
-        .vendor-card, .service-card {
-          flex: 0 1 calc(100% - 20px); /* Single card per row with spacing */
-        }
-      }
-      
+}
+
+@media (max-width: 576px) {
+  .seller-card,
+  .service-card {
+    flex: 0 1 calc(100% - 20px);
+  }
+}

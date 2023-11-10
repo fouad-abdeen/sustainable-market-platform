@@ -1,0 +1,29 @@
+h1 {
+  text-align: center;
+}
+
+input,
+textarea {
+  width: 80%;
+  height: 45px;
+  border: none;
+  background-color: #f5eedc;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  padding: 15px 70px;
+  background-color: #5cb25d;
+  color: white;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    margin: 0 5%;
+  }
+}

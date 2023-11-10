@@ -1,0 +1,27 @@
+.email-verification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.verification-success {
+  background-color: #dff0d8;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.verification-pending {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.verification-error {
+  background-color: #f2dede;
+  padding: 20px;
+  border-radius: 5px;
+}
