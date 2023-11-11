@@ -47,9 +47,12 @@ const Seller = () => {
       }
 
       if (sellerItems.length === 0) {
-        const items = await itemApi.getItems({ sellerId });
-        setSellerItems(items.data);
-        setFilteredItems(items.data);
+        const itemsResponse = await itemApi.getItems({ sellerId });
+        const approvedItems = itemsResponse.data.filter((item) =>
+          (foundSeller.itemCategories ?? []).includes(item.categoryId)
+        );
+        setSellerItems(approvedItems);
+        setFilteredItems(approvedItems);
       }
 
       setSeller(foundSeller);

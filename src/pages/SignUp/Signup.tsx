@@ -97,125 +97,122 @@ function SignUp() {
 
   return (
     <>
-      <div className="main">
-        <div className="image-container"></div>
-        <div className="form-container">
-          <div className="new-user">
-            Already have an account?
-            <Link to="/signin">
-              <span className="sign-up-link"> Sign In </span>
-            </Link>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <h2>Welcome at Sustainable Market</h2>
-            <div className="form-group">
-              <label htmlFor="userRole">Sign Up As:</label>
-              <select
-                name="userRole"
-                className="form-input"
-                value={userRole}
-                onChange={handkeUserRoleChange}
-                required
-              >
-                <option value="Customer">Customer</option>
-                <option value="Seller">Seller</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="form-input"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group password-input-container">
-              <label htmlFor="password">Password</label>
-              <input
-                type={showPassword ? "text" : "password"}
-                className="form-input password-input"
-                name="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-              <span className="signup-show-password-button" onClick={togglePasswordVisibility}>
-                <img
-                  src={Visible}
-                  alt="Show Password"
-                  className={`visible ${showPassword ? "icon" : ""}`}
-                />
-              </span>
-            </div>
-            {userRole === UserRole.CUSTOMER ? (
-              <>
-                <div className="form-group">
-                  <label htmlFor="firstName">First Name</label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    placeholder="First Name"
-                    className="form-input"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="lastName">Last Name</label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    placeholder="Last Name"
-                    className="form-input"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="form-group">
-                  <label htmlFor="name">Business Name</label>
-                  <input
-                    type="text"
-                    name="sellerName"
-                    placeholder="Business Name"
-                    className="form-input"
-                    value={formData.sellerName}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="category">Category</label>
-                  <select
-                    name="categoryId"
-                    className="form-input"
-                    value={formData.categoryId}
-                    onChange={handleChange}
-                    required
-                  >
-                    {serviceCategories.map((category) => (
-                      <option key={category.id} value={category.id}>
-                        {category.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </>
-            )}
-            <button className="form-input submit-button" type="submit">
-              Sign Up
-            </button>
-          </form>
+      <div className="form-container">
+        <div className="new-user">
+          Already have an account?
+          <Link to="/signin">
+            <span className="sign-up-link"> Sign In </span>
+          </Link>
         </div>
+        <form onSubmit={handleSubmit}>
+          <h2>Welcome at Sustainable Market</h2>
+          <div className="form-group">
+            <label htmlFor="userRole">Sign Up As:</label>
+            <select
+              name="userRole"
+              className="form-input"
+              value={userRole}
+              onChange={handkeUserRoleChange}
+              required
+            >
+              <option value="Customer">Customer</option>
+              <option value="Seller">Seller</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="form-input"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group password-input-container">
+            <label htmlFor="password">Password</label>
+            <input
+              type={showPassword ? "text" : "password"}
+              className="form-input password-input"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <span className="signup-show-password-button" onClick={togglePasswordVisibility}>
+              <img
+                src={Visible}
+                alt="Show Password"
+                className={`visible ${showPassword ? "icon" : ""}`}
+              />
+            </span>
+          </div>
+          {userRole === UserRole.CUSTOMER ? (
+            <>
+              <div className="form-group">
+                <label htmlFor="firstName">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  className="form-input"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="lastName">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  className="form-input"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="form-group">
+                <label htmlFor="name">Business Name</label>
+                <input
+                  type="text"
+                  name="sellerName"
+                  placeholder="Business Name"
+                  className="form-input"
+                  value={formData.sellerName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="category">Category</label>
+                <select
+                  name="categoryId"
+                  className="form-input"
+                  value={formData.categoryId}
+                  onChange={handleChange}
+                  required
+                >
+                  {serviceCategories.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </>
+          )}
+          <button className="form-input submit-button" type="submit">
+            Sign Up
+          </button>
+        </form>
       </div>
     </>
   );

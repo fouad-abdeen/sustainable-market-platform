@@ -1,7 +1,7 @@
 import "./SellerItem.css";
 import React, { useEffect, useState } from "react";
 import SellerItemDetail from "../SellerItemDetail/SellerItemDetail";
-import { SellerItem } from "../../types/item";
+import { SellerItem as Item } from "../../types/item";
 import { Category } from "../../types/category";
 import { categoryApi, itemApi, sellerApi } from "../../api-helpers";
 import { SellerItemUpdateRequest } from "../../types/api-requests";
@@ -12,12 +12,12 @@ interface SellerItemProps {
   userRole: string;
   seller: SellerInfo;
   itemCategories: Category[];
-  item: SellerItem;
-  onUpdate: (item: SellerItem) => void;
+  item: Item;
+  onUpdate: (item: Item) => void;
   onDelete: (itemId: string) => void;
 }
 
-const SellerItemComponent: React.FC<SellerItemProps> = ({
+const SellerItem: React.FC<SellerItemProps> = ({
   userRole,
   seller,
   itemCategories,
@@ -27,7 +27,7 @@ const SellerItemComponent: React.FC<SellerItemProps> = ({
 }) => {
   const [isDetailVisible, setIsDetailVisible] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  const [updatedItem, setUpdatedItem] = useState<SellerItemUpdateRequest>({} as SellerItem);
+  const [updatedItem, setUpdatedItem] = useState<SellerItemUpdateRequest>({} as Item);
   const [category, setCategory] = useState({} as Category);
   const [categories, setCategories] = useState<ItemCategoryResponse[]>([]);
 
@@ -214,10 +214,23 @@ const SellerItemComponent: React.FC<SellerItemProps> = ({
             <h3>{item.name}</h3>
             {userRole === UserRole.ADMIN && <p>Seller: {seller.name}</p>}
             <p>Price: ${item.price}</p>
-            <p>Category: {category.name}</p>
+            <p>
+              Category:
+              {category.name === "All" ? (
+                <span style={{ color: "#dc3545", fontSize: "16px" }}>
+                  {userRole === UserRole.ADMIN
+                    ? " Item has no category and is not displayed on the seller's public page"
+                    : " Your item has no category and will not be displayed on your public page." +
+                      " Update the category once we assign you the needed item categories for your profile." +
+                      " Please get in touch with us if needed."}
+                </span>
+              ) : (
+                category.name
+              )}
+            </p>
           </div>
         )}
-        <div className="actions">
+        <div className="actions" style={{ marginLeft: "100px" }}>
           {isEditing ? (
             <>
               <button className="button primary-button" onClick={updateItem}>
@@ -253,4 +266,4 @@ const SellerItemComponent: React.FC<SellerItemProps> = ({
   );
 };
 
-export default SellerItemComponent;
+export default SellerItem;

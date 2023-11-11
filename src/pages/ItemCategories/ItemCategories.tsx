@@ -53,7 +53,7 @@ function ItemCategories() {
       const response = await categoryApi.createCategory(
         {
           name: newCategoryName,
-          type: CategoryType.SERVICE,
+          type: CategoryType.ITEM,
         },
         localStorage.getItem("accessToken") as string
       );
@@ -67,7 +67,7 @@ function ItemCategories() {
         return;
       }
 
-      setItemCategories([...itemCategories, response.data]);
+      setCategories([...itemCategories, response.data]);
       setNewCategoryName("");
     } catch (error) {
       alert(error);

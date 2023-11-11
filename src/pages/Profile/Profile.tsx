@@ -97,7 +97,7 @@ const Profile: React.FC = () => {
               ? customerProfileKeys.map((key) => {
                   return (customerProfile as any)[key] ? (
                     <div className="profile-row" key={key}>
-                      <div className="profile-label">{camelCaseToTitleCase(key)}:</div>
+                      <div className="profile-label">{camelCaseToTitleCase(key)}</div>
                       <div className="profile-value">{(customerProfile as any)[key]}</div>
                     </div>
                   ) : (
@@ -112,16 +112,25 @@ const Profile: React.FC = () => {
                       <div className="profile-label">
                         {key === "categoryId"
                           ? "Service Category:"
-                          : `${camelCaseToTitleCase(key)}:`}
+                          : key === "logoUrl"
+                          ? "Logo:"
+                          : camelCaseToTitleCase(key)}
                       </div>
                       <div className="profile-value">
-                        {key === "itemCategories"
-                          ? itemCategories || (
-                              <span style={{ color: "#dd4a48" }}>
-                                No assigned item categories yet.
-                              </span>
-                            )
-                          : (sellerProfile as any)[key]}
+                        {key === "itemCategories" ? (
+                          itemCategories || (
+                            <span style={{ color: "#dd4a48" }}>
+                              No assigned item categories yet.
+                            </span>
+                          )
+                        ) : key === "logoUrl" ? (
+                          <img
+                            src={(sellerProfile as any)[key]}
+                            style={{ objectFit: "contain", width: "200px", height: "200px" }}
+                          />
+                        ) : (
+                          (sellerProfile as any)[key]
+                        )}
                       </div>
                     </div>
                   ) : (

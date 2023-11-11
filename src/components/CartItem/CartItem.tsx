@@ -1,12 +1,12 @@
 import "./CartItem.css";
 import { useContext, useState } from "react";
-import { CartItem } from "../../types/item";
+import { CartItem as Item } from "../../types/item";
 import { CartContext } from "../../contexts/CartContext";
 import { cartApi } from "../../api-helpers";
 import { CartResponse } from "../../types/api-responses";
 import { useNavigate } from "react-router-dom";
 
-const CartItemComponent: React.FC<{ item: CartItem }> = ({ item }) => {
+const CartItem: React.FC<{ item: Item }> = ({ item }) => {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(item.quantity);
   const [total, setTotal] = useState(item.price * item.quantity);
@@ -52,7 +52,7 @@ const CartItemComponent: React.FC<{ item: CartItem }> = ({ item }) => {
 
     const updatedCart = {
       ...cart,
-      items: (cart.items as CartItem[]).map((cartItem) => {
+      items: (cart.items as Item[]).map((cartItem) => {
         if (cartItem.id === item.id) {
           return {
             ...cartItem,
@@ -79,7 +79,7 @@ const CartItemComponent: React.FC<{ item: CartItem }> = ({ item }) => {
 
     const updatedCart = {
       ...cart,
-      items: (cart.items as CartItem[]).filter((cartItem) => cartItem.id !== item.id),
+      items: (cart.items as Item[]).filter((cartItem) => cartItem.id !== item.id),
     };
 
     setCart({
@@ -114,4 +114,4 @@ const CartItemComponent: React.FC<{ item: CartItem }> = ({ item }) => {
   );
 };
 
-export default CartItemComponent;
+export default CartItem;

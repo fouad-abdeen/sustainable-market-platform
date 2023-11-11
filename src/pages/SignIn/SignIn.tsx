@@ -66,55 +66,52 @@ function SignIn() {
 
   return (
     <>
-      <div className="main">
-        <div className="image-container"></div>
-        <div className="form-container">
-          <div className="new-user">
-            New To Food Grid?{" "}
-            <Link to="/signup">
-              {" "}
-              <span className="sign-up-link">Sign Up</span>{" "}
+      <div className="form-container">
+        <div className="new-user">
+          New To Food Grid?
+          <Link to="/signup">
+            {" "}
+            <span className="sign-up-link">Sign Up</span>
+          </Link>
+        </div>
+        <form>
+          <h2>Welcome back to Sustainable Market</h2>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              className="form-input"
+              onChange={(event) => setEmail(event.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group password-input-container">
+            <label htmlFor="password">Password</label>
+            <input
+              type={showPassword ? "text" : "password"}
+              className="form-input password-input"
+              name="password"
+              placeholder="password"
+              onChange={(event) => setPassword(event.target.value)}
+              required
+            />
+            <span className="show-password-button" onClick={togglePasswordVisibility}>
+              <img
+                src={Visible}
+                alt="Show Password"
+                className={`visible ${showPassword ? "icon" : ""}`}
+              />
+            </span>
+            <Link to="/request-password-reset" className="forgot-password-link">
+              Forgot Password?
             </Link>
           </div>
-          <form>
-            <h2>Welcome back to Sustainable Market</h2>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                className="form-input"
-                onChange={(event) => setEmail(event.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group password-input-container">
-              <label htmlFor="password">Password</label>
-              <input
-                type={showPassword ? "text" : "password"}
-                className="form-input password-input"
-                name="password"
-                placeholder="password"
-                onChange={(event) => setPassword(event.target.value)}
-                required
-              />
-              <span className="show-password-button" onClick={togglePasswordVisibility}>
-                <img
-                  src={Visible}
-                  alt="Show Password"
-                  className={`visible ${showPassword ? "icon" : ""}`}
-                />
-              </span>
-              <Link to="/request-password-reset" className="forgot-password-link">
-                Forgot Password?
-              </Link>
-            </div>
-            <button className="form-input submit-button" type="submit" onClick={handleSignin}>
-              Sign In
-            </button>
-          </form>
-        </div>
+          <button className="form-input submit-button" type="submit" onClick={handleSignin}>
+            Sign In
+          </button>
+        </form>
       </div>
     </>
   );

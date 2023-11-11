@@ -12,6 +12,11 @@ textarea {
   margin: 10px;
 }
 
+textarea {
+  min-width: 700px;
+  min-height: 100px;
+}
+
 button {
   width: 200px;
   height: 50px;

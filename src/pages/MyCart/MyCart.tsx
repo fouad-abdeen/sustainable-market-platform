@@ -1,5 +1,5 @@
 import "./MyCart.css";
-import CartItemComponent from "../../components/CartItem/CartItem";
+import CartItem from "../../components/CartItem/CartItem";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { CartContext } from "../../contexts/CartContext";
@@ -64,7 +64,7 @@ const MyCart: React.FC = () => {
       <h1>My Cart</h1>
       <ul className="cart-container">
         {((cart as CartResponse).items ?? []).map((item) => (
-          <CartItemComponent key={item.id} item={item} />
+          <CartItem key={item.id} item={item} />
         ))}
       </ul>
       <p className="total-price">Total: ${(cart.total ?? 0).toFixed(2)}</p>

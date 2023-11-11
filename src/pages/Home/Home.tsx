@@ -1,6 +1,5 @@
 import "./Home.css";
 import DefaultLogoImage from "../../assets/default-seller-image.jpg";
-import { servicesData } from "../../data";
 import { useContext } from "react";
 import { SellersContext } from "../../contexts/SellersContext";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +9,27 @@ function Home() {
   const navigate = useNavigate();
   const { sellers } = useContext(SellersContext);
   const { categories } = useContext(CategoriesContext);
+
+  const servicesData = [
+    {
+      id: 1,
+      title: "Eco-Friendly Products",
+      description: "Explore a wide range of sustainable and eco-friendly products.",
+      icon: "https://static.vecteezy.com/system/resources/previews/013/965/458/original/eco-green-eco-friendly-icon-recycle-logo-packaging-renewable-symbol-green-environmentally-sign-vector.jpg", // Replace with actual image path or icon class
+    },
+    {
+      id: 2,
+      title: "Fair Trade Partnerships",
+      description: "Support fair trade practices with our ethical partnerships.",
+      icon: "https://www.pngitem.com/pimgs/m/265-2650663_green-trade-fair-trade-marketing-icon-png-transparent.png",
+    },
+    // {
+    //   id: 3,
+    //   title: "Recycling Services",
+    //   description: "Efficient recycling solutions for a greener environment.",
+    //   icon: "https://img.freepik.com/premium-vector/green-recycling-symbol-icon-eco-cycle-elimination-garbage_572038-206.jpg",
+    // },
+  ];
 
   return (
     <>

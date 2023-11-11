@@ -76,13 +76,27 @@ a {
   display: none;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 500px) {
+  .brand {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .brand a h1 {
+    font-size: 1rem;
+  }
+
   .brand img {
     display: none;
   }
+
+  .dropdown-content {
+    font-size: 12px;
+    min-width: 80px;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 501px) and (max-width: 900px) {
   .brand {
     margin-left: 0;
     margin-right: 20px;
@@ -92,6 +106,13 @@ a {
     font-size: 1.2rem;
   }
 
+  .dropdown-content {
+    font-size: 14px;
+    min-width: 120px;
+  }
+}
+
+@media screen and (max-width: 900px) {
   .brand img {
     width: 30px;
     height: 30px;
@@ -143,17 +164,12 @@ a {
     margin-right: 50px;
   }
 
-  .dropdown-content {
-    font-size: 14px;
-    min-width: 120px;
-  }
-
   .signup-button {
     display: none;
   }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 901px) {
   .dropdown {
     margin-right: 180px;
   }
@@ -176,7 +192,6 @@ a {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }

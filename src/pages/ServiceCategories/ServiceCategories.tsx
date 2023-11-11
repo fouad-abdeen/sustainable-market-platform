@@ -6,7 +6,6 @@ import { Category, CategoryType } from "../../types/category";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { SellerInfo, UserRole } from "../../types/user";
-import { SellersContext } from "../../contexts/SellersContext";
 
 function ServiceCategories() {
   const navigate = useNavigate();
@@ -64,7 +63,7 @@ function ServiceCategories() {
         return;
       }
 
-      setServiceCategories([...serviceCategories, response.data]);
+      setCategories([...serviceCategories, response.data]);
       setNewCategoryName("");
     } catch (error) {
       alert(error);

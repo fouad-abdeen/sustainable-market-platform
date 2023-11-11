@@ -26,11 +26,6 @@ label {
   font-size: 16px;
 }
 
-textarea.form-control {
-  resize: vertical;
-  height: 100px;
-}
-
 .btn-primary {
   background-color: #ecb390;
   color: #fff;

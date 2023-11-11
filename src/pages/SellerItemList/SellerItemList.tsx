@@ -1,6 +1,6 @@
 import "./SellerItemList.css";
 import { useContext, useEffect, useState } from "react";
-import SellerItemComponent from "../../components/SellerItem/SellerItem";
+import SellerItem from "../../components/SellerItem/SellerItem";
 import { SellerItemResponse } from "../../types/api-responses";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
@@ -9,7 +9,7 @@ import { categoryApi, itemApi, sellerApi } from "../../api-helpers";
 import { SellerItemCreateRequest } from "../../types/api-requests";
 import { CategoriesContext } from "../../contexts/CategoriesContext";
 import { Category } from "../../types/category";
-import { SellerItem } from "../../types/item";
+import { SellerItem as Item } from "../../types/item";
 
 const SellerItemList: React.FC = () => {
   const navigate = useNavigate();
@@ -147,7 +147,7 @@ const SellerItemList: React.FC = () => {
     if ((user ?? ({} as User)).role === UserRole.ADMIN) {
       setFilteredItems(
         selectedSeller
-          ? updatedItems.filter((item: SellerItem) => item.sellerId === selectedSeller)
+          ? updatedItems.filter((item: Item) => item.sellerId === selectedSeller)
           : updatedItems
       );
     }
@@ -167,7 +167,7 @@ const SellerItemList: React.FC = () => {
     setSelectedSeller(seller);
 
     if (seller) {
-      setFilteredItems(items.filter((item: SellerItem) => item.sellerId === seller));
+      setFilteredItems(items.filter((item: Item) => item.sellerId === seller));
     } else {
       setFilteredItems(items);
     }
@@ -262,7 +262,7 @@ const SellerItemList: React.FC = () => {
 
       <ul>
         {((user ?? {}).role === UserRole.ADMIN ? filteredItems : items).map((item) => (
-          <SellerItemComponent
+          <SellerItem
             key={item.id}
             userRole={(user ?? { role: "" }).role}
             seller={sellers.find((seller) => seller.id === item.sellerId) ?? ({} as SellerInfo)}

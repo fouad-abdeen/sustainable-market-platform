@@ -98,7 +98,7 @@ const CheckoutInformation: React.FC = () => {
         </div>
         <div className="form-group">
           <label htmlFor="address">Address:</label>
-          <textarea
+          <input
             id="address"
             name="address"
             value={checkoutInfo.address || ""}
