@@ -2,8 +2,9 @@ h1 {
   text-align: center;
 }
 
-input,
-textarea {
+#name,
+#email,
+#message {
   width: 80%;
   height: 45px;
   border: none;
@@ -12,9 +13,11 @@ textarea {
   margin: 10px;
 }
 
-textarea {
-  min-width: 700px;
-  min-height: 100px;
+#message {
+  min-width: 80%;
+  max-width: 90%;
+  min-height: 75px;
+  max-height: 300px;
 }
 
 button {

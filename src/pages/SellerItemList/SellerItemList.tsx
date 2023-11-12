@@ -189,6 +189,7 @@ const SellerItemList: React.FC = () => {
               />
               <label>Description:</label>
               <textarea
+                className="item-description"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               />

@@ -97,7 +97,7 @@ function SignIn() {
               onChange={(event) => setPassword(event.target.value)}
               required
             />
-            <span className="show-password-button" onClick={togglePasswordVisibility}>
+            <span className="signin-show-password-button" onClick={togglePasswordVisibility}>
               <img
                 src={Visible}
                 alt="Show Password"

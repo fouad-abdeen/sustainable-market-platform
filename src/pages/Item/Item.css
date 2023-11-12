@@ -70,20 +70,16 @@
   width: 120px;
 }
 
-.item-info input[type="number"] {
-  display: inline-block;
-  width: 50px;
-  padding: 8px;
-  border: 1px solid #ccc;
+#quantity {
+  min-width: 40px;
+  min-height: 40px;
+  border: none;
+  background-color: #f5eedc;
   border-radius: 5px;
+  margin: 10px;
 }
 
-.item-info input[type="number"] {
-  width: 50px;
-  padding: 5px;
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .item-detail {
     margin: 10px;
   }
@@ -92,9 +88,12 @@
     font-size: 20px;
   }
 
-  .item-info p {
+  .item-description {
     font-size: 14px;
-    margin-bottom: 15px;
+  }
+
+  .item-price {
+    font-size: 18px;
   }
 
   .item-info input[type="number"] {

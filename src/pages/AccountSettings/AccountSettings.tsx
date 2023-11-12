@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
 import "./AccountSettings.css";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PasswordChangePopup from "../../components/PasswordChangePopup/PasswordChangePopup";
 import { camelCaseToTitleCase } from "../../utility-functions";
@@ -114,6 +114,7 @@ const AccountSettings: React.FC = () => {
                     name={key}
                     value={(formData as any)[key] ?? ""}
                     onChange={handleChange}
+                    className="form-input"
                   />
                 </div>
               );

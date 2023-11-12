@@ -135,7 +135,7 @@ function SignUp() {
             <label htmlFor="password">Password</label>
             <input
               type={showPassword ? "text" : "password"}
-              className="form-input password-input"
+              className="form-input"
               name="password"
               placeholder="Password"
               value={formData.password}

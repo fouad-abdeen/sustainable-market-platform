@@ -20,11 +20,15 @@ h2 {
 }
 
 .add-item-form input,
-textarea,
-select {
+.add-item-form textarea,
+.add-item-form select {
   max-width: 50%;
   width: 50%;
   height: 40px;
+}
+
+.add-item-form textarea {
+  min-height: 100px;
 }
 
 .add-item-buttons {
@@ -32,8 +36,43 @@ select {
   justify-content: space-around;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 801px) {
+  .add-item-form textarea {
+    max-height: 500px;
+    min-width: 500px;
+  }
+
+  .add-item-form select {
+    min-width: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .seller-item-list h2 {
     font-size: 20px;
+  }
+
+  .add-item-form textarea {
+    max-height: 350px;
+    min-width: 350px;
+  }
+
+  .add-item-form select {
+    min-width: 350px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .seller-item-list h2 {
+    font-size: 20px;
+  }
+
+  .add-item-form textarea {
+    max-height: 200px;
+    min-width: 200px;
+  }
+
+  .add-item-form select {
+    min-width: 200px;
   }
 }

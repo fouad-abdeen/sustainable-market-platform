@@ -102,6 +102,7 @@ const CartItem: React.FC<{ item: Item }> = ({ item }) => {
             type="number"
             min={1}
             max={5}
+            id="quantity"
             value={quantity}
             onChange={(e) => setQuantity(parseInt(e.target.value))}
             onBlur={() => handleQuantityChange()}

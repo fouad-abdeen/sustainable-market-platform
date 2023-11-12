@@ -1,12 +1,3 @@
-.image-container {
-  flex-basis: 40%;
-  height: 100%;
-  background-image: url("../assets/restaurant.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
 .form-container {
   display: flex;
   align-items: flex-end;
@@ -46,10 +37,14 @@ select {
   margin-top: 50px;
 }
 
+.password-input-container {
+  position: relative;
+}
+
 .signup-show-password-button {
   position: absolute;
-  right: 10px;
-  top: 55%;
+  right: 20%;
+  top: 45%;
   transform: translateY(-50%);
   cursor: pointer;
   background: none;

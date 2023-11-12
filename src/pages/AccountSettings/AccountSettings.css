@@ -1,6 +1,4 @@
-/* AccountSettings.css */
 .account-settings {
-  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -14,13 +12,8 @@ label {
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+input {
+  min-width: 500px;
 }
 
 button {
@@ -30,6 +23,16 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.show-password-button {
+  position: absolute;
+  right: 5%;
+  top: 55%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .pulse {
@@ -51,18 +54,33 @@ button {
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (min-width: 801px) {
+  input {
+    min-height: 60px;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .account-settings {
     padding: 10px;
   }
 
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
+  input {
     padding: 8px;
+    min-width: 350px;
   }
 
   button {
     padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  button {
+    max-width: 70%;
+  }
+
+  input {
+    min-width: 200px;
   }
 }
