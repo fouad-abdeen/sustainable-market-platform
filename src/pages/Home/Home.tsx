@@ -45,36 +45,39 @@ function Home() {
       <section className="new-sellers-section">
         <h2>New Sellers</h2>
         <div className="seller-list">
-          {sellers.slice(0, 3).map((seller) => (
-            <div className="seller-card" key={seller.id}>
-              <img
-                title="Click to view seller details"
-                src={seller.logoUrl ?? DefaultLogoImage}
-                style={{ objectFit: "contain", width: "200px", height: "200px" }}
-                onClick={() => navigate(`sellers/${seller.id}`)}
-              />
-              <h3>{seller.name}</h3>
-              <h4>
-                {(categories.find((category) => category.id === seller.categoryId) ?? {}).name ??
-                  ""}
-              </h4>
-              {seller.description && (
-                <p className="seller-description">
-                  {seller.description.slice(0, 200)}
-                  {seller.description.length > 200 ? (
-                    <i
-                      className="read-more-description"
-                      onClick={() => navigate(`sellers/${seller.id}`)}
-                    >
-                      ... Read More
-                    </i>
-                  ) : (
-                    ""
-                  )}
-                </p>
-              )}
-            </div>
-          ))}
+          {sellers
+            .slice(0, 3)
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((seller) => (
+              <div className="seller-card" key={seller.id}>
+                <img
+                  title="Click to view seller details"
+                  src={seller.logoUrl ?? DefaultLogoImage}
+                  style={{ objectFit: "contain", width: "200px", height: "200px" }}
+                  onClick={() => navigate(`sellers/${seller.id}`)}
+                />
+                <h3>{seller.name}</h3>
+                <h4>
+                  {(categories.find((category) => category.id === seller.categoryId) ?? {}).name ??
+                    ""}
+                </h4>
+                {seller.description && (
+                  <p className="seller-description">
+                    {seller.description.slice(0, 200)}
+                    {seller.description.length > 200 ? (
+                      <i
+                        className="read-more-description"
+                        onClick={() => navigate(`sellers/${seller.id}`)}
+                      >
+                        ... Read More
+                      </i>
+                    ) : (
+                      ""
+                    )}
+                  </p>
+                )}
+              </div>
+            ))}
         </div>
       </section>
       <section className="our-services-section">

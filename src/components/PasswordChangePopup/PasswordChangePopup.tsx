@@ -29,7 +29,7 @@ const PasswordChangePopup: React.FC<{ onClose: () => void }> = ({ onClose }) => 
 
       const response = await authApi.updatePassword(
         { currentPassword, newPassword, terminateAllSessions },
-        accessToken,
+        accessToken
       );
 
       if (!response.status) {
@@ -58,7 +58,7 @@ const PasswordChangePopup: React.FC<{ onClose: () => void }> = ({ onClose }) => 
         <input
           type={showCurrentPassword ? "text" : "password"}
           id="currentPassword"
-          className="password-input"
+          className="form-input"
           value={currentPassword}
           onChange={(e) => setCurrentPassword(e.target.value)}
           required
@@ -79,7 +79,7 @@ const PasswordChangePopup: React.FC<{ onClose: () => void }> = ({ onClose }) => 
         <input
           type={showNewPassword ? "text" : "password"}
           id="newPassword"
-          className="password-input"
+          className="form-input"
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
           required
@@ -97,7 +97,7 @@ const PasswordChangePopup: React.FC<{ onClose: () => void }> = ({ onClose }) => 
         <input
           type={showNewPasswordConfirmation ? "text" : "password"}
           id="newPasswordConfirmation"
-          className="password-input"
+          className="form-input"
           value={newPasswordConfirmation}
           onChange={(e) => setNewPasswordConfirmation(e.target.value)}
           required

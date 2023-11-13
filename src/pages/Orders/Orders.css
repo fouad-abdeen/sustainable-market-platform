@@ -17,7 +17,6 @@
 .orders-table {
   width: 100%;
   border-collapse: collapse;
-  overflow-x: auto;
 }
 
 .orders-table th,

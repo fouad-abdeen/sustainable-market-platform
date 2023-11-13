@@ -97,8 +97,9 @@ const SellerItemList: React.FC = () => {
             }
 
             if (response.data) {
-              setItems(response.data);
-              setFilteredItems(response.data);
+              const sortedItems = response.data.sort((a, b) => a.name.localeCompare(b.name));
+              setItems(sortedItems);
+              setFilteredItems(sortedItems);
             }
           }
         }
@@ -184,18 +185,20 @@ const SellerItemList: React.FC = () => {
               <label>Name:</label>
               <input
                 type="text"
+                className="form-input"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
               <label>Description:</label>
               <textarea
-                className="item-description"
+                className="form-input"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               />
               <label>Price:</label>
               <input
                 type="number"
+                className="form-input"
                 value={formData.price}
                 onChange={(e) => setFormData({ ...formData, price: +e.target.value })}
               />
@@ -214,18 +217,21 @@ const SellerItemList: React.FC = () => {
               <label>Quantity:</label>
               <input
                 type="number"
+                className="form-input"
                 value={formData.quantity}
                 onChange={(e) => setFormData({ ...formData, quantity: +e.target.value })}
               />
               <label>Is Available:</label>
               <input
                 type="checkbox"
+                className="form-input"
                 checked={formData.isAvailable}
                 onChange={(e) => setFormData({ ...formData, isAvailable: e.target.checked })}
               />
               <label>Image URL:</label>
               <input
                 type="text"
+                className="form-input"
                 value={formData.imageUrl}
                 onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
               />

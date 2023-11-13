@@ -266,7 +266,6 @@ const endpoints = {
   },
   user: {
     query: Routes.USER,
-    queryOne: (id: string) => `${Routes.USER}/${id}`,
     acknowledge: (id: string) => `${Routes.USER}/${id}/acknowledge`,
     deny: (id: string) => `${Routes.USER}/${id}/deny`,
   },
@@ -376,13 +375,6 @@ export const userApi = {
   query: async (accessToken: string): Promise<ApiResponse<User[]>> =>
     await get(
       endpoints.user.query,
-      { headers: { ...defaultConfiguration.headers, Authorization: accessToken } },
-      true
-    ),
-
-  queryOne: async (id: string, accessToken: string): Promise<ApiResponse<User>> =>
-    await get(
-      endpoints.user.queryOne(id),
       { headers: { ...defaultConfiguration.headers, Authorization: accessToken } },
       true
     ),

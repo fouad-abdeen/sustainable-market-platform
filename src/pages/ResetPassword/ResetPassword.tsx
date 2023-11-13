@@ -42,6 +42,8 @@ function ResetPassword() {
             type={showPassword ? "text" : "password"}
             id="password"
             name="password"
+            className="form-input"
+            style={{ marginBottom: "20px" }}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -61,6 +63,7 @@ function ResetPassword() {
             type={showPasswordConfirmation ? "text" : "password"}
             id="passwordConfirmation"
             name="passwordConfirmation"
+            className="form-input"
             value={passwordConfirmation}
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             required

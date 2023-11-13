@@ -1,7 +1,7 @@
 import "./Item.css";
 import DefaultItemImage from "../../assets/default-item-image.jpg";
 import { useContext, useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { SellerItem } from "../../types/item";
 import { cartApi, itemApi } from "../../api-helpers";
 import { CartContext } from "../../contexts/CartContext";
@@ -9,6 +9,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { UserRole } from "../../types/user";
 
 const Item: React.FC = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const params = useParams();
   const { user } = useContext(UserContext);
@@ -39,7 +40,12 @@ const Item: React.FC = () => {
   }, []);
 
   const checkItemAvailability = (item: SellerItem): void => {
-    if (item.isAvailable && item.quantity >= 1) {
+    if (!item.isAvailable) {
+      navigate("/");
+      return;
+    }
+
+    if (item.quantity >= 1) {
       return;
     }
 

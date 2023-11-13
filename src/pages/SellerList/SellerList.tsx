@@ -18,7 +18,8 @@ function SellerList() {
     if (categories.length > 0) {
       setServiceCategories(categories.filter((category) => category.type === CategoryType.SERVICE));
     }
-    setFilteredSellers(sellers);
+
+    setFilteredSellers(sellers.sort((a, b) => a.name.localeCompare(b.name)));
   }, [categories, sellers]);
 
   const handleCategorySelection = (event: React.ChangeEvent<HTMLSelectElement>) => {

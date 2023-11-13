@@ -29,6 +29,7 @@ h2 {
 
 .add-item-form textarea {
   min-height: 100px;
+  max-height: 200px;
 }
 
 .add-item-buttons {
@@ -38,7 +39,6 @@ h2 {
 
 @media screen and (min-width: 801px) {
   .add-item-form textarea {
-    max-height: 500px;
     min-width: 500px;
   }
 
@@ -53,7 +53,6 @@ h2 {
   }
 
   .add-item-form textarea {
-    max-height: 350px;
     min-width: 350px;
   }
 
@@ -68,7 +67,6 @@ h2 {
   }
 
   .add-item-form textarea {
-    max-height: 200px;
     min-width: 200px;
   }
 

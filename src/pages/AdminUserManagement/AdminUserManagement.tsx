@@ -146,7 +146,7 @@ function AdminUserManagement() {
       <h2>Registered Users</h2>
 
       <div className="filter-options">
-        <div className="filter">
+        <div className="filter" style={{ margin: "15px" }}>
           <label htmlFor="roleFilter">Filter by Role:</label>
           <select
             id="roleFilter"
@@ -158,9 +158,8 @@ function AdminUserManagement() {
             <option value="Seller">Seller</option>
           </select>
         </div>
-
-        <div className="filter" style={{ marginLeft: "70px" }}>
-          <label htmlFor="verifiedFilter">Filter by Verification:</label>
+        <div className="filter" style={{ margin: "15px" }}>
+          <label htmlFor="verifiedFilter">Filter by Verification Status:</label>
           <select
             id="verifiedFilter"
             value={verificationStatusFilter}
@@ -177,94 +176,96 @@ function AdminUserManagement() {
         </button>
       </div>
 
-      <table className="user-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Verified</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredUsers.map((user) => (
-            <tr
-              key={user.id}
-              style={{
-                cursor: user.role === UserRole.SELLER ? "pointer" : "default",
-              }}
-            >
-              <td
-                onClick={() => openSellerInfoModal(user.id, user.role)}
-                title={
-                  user.role === UserRole.SELLER
-                    ? "Click to view seller details and manage their categories"
-                    : ""
-                }
-              >
-                {user.id}
-              </td>
-              <td
-                onClick={() => openSellerInfoModal(user.id, user.role)}
-                title={
-                  user.role === UserRole.SELLER
-                    ? "Click to view seller details and manage their categories"
-                    : ""
-                }
-              >
-                {user.email}
-              </td>
-              <td
-                onClick={() => openSellerInfoModal(user.id, user.role)}
-                title={
-                  user.role === UserRole.SELLER
-                    ? "Click to view seller details and manage their categories"
-                    : ""
-                }
-              >
-                {user.role === UserRole.CUSTOMER ? (
-                  `${(user.profile as CustomerProfile).firstName} ${
-                    (user.profile as CustomerProfile).lastName
-                  }`
-                ) : (
-                  <>
-                    <SellerInfoModal
-                      sellerId={user.id}
-                      sellerInfo={user.profile as SellerProfile}
-                      onClose={closeSellerInfoModal}
-                    />
-                    {(user.profile as SellerProfile).name}
-                  </>
-                )}
-              </td>
-              <td onClick={() => openSellerInfoModal(user.id, user.role)}>{user.role}</td>
-              <td onClick={() => openSellerInfoModal(user.id, user.role)}>
-                <span id={`verification-status-${user.id}`}>{user.verified ? "Yes" : "No"}</span>
-              </td>
-              <td>
-                <button
-                  id={`deny-button-${user.id}`}
-                  className="toggle-verification deny"
-                  style={{ display: user.verified ? "block" : "none" }}
-                  onClick={() => deny(user.id)}
-                >
-                  Deny
-                </button>
-                <button
-                  id={`acknowledge-button-${user.id}`}
-                  className="toggle-verification acknowledge"
-                  style={{ display: user.verified ? "none" : "block" }}
-                  onClick={() => acknowledge(user.id)}
-                >
-                  Acknowledge
-                </button>
-              </td>
+      <div style={{ overflowX: "auto" }}>
+        <table className="user-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Verified</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredUsers.map((user) => (
+              <tr
+                key={user.id}
+                style={{
+                  cursor: user.role === UserRole.SELLER ? "pointer" : "default",
+                }}
+              >
+                <td
+                  onClick={() => openSellerInfoModal(user.id, user.role)}
+                  title={
+                    user.role === UserRole.SELLER
+                      ? "Click to view seller details and manage their categories"
+                      : ""
+                  }
+                >
+                  {user.id}
+                </td>
+                <td
+                  onClick={() => openSellerInfoModal(user.id, user.role)}
+                  title={
+                    user.role === UserRole.SELLER
+                      ? "Click to view seller details and manage their categories"
+                      : ""
+                  }
+                >
+                  {user.email}
+                </td>
+                <td
+                  onClick={() => openSellerInfoModal(user.id, user.role)}
+                  title={
+                    user.role === UserRole.SELLER
+                      ? "Click to view seller details and manage their categories"
+                      : ""
+                  }
+                >
+                  {user.role === UserRole.CUSTOMER ? (
+                    `${(user.profile as CustomerProfile).firstName} ${
+                      (user.profile as CustomerProfile).lastName
+                    }`
+                  ) : (
+                    <>
+                      <SellerInfoModal
+                        sellerId={user.id}
+                        sellerInfo={user.profile as SellerProfile}
+                        onClose={closeSellerInfoModal}
+                      />
+                      {(user.profile as SellerProfile).name}
+                    </>
+                  )}
+                </td>
+                <td onClick={() => openSellerInfoModal(user.id, user.role)}>{user.role}</td>
+                <td onClick={() => openSellerInfoModal(user.id, user.role)}>
+                  <span id={`verification-status-${user.id}`}>{user.verified ? "Yes" : "No"}</span>
+                </td>
+                <td>
+                  <button
+                    id={`deny-button-${user.id}`}
+                    className="toggle-verification deny"
+                    style={{ display: user.verified ? "block" : "none" }}
+                    onClick={() => deny(user.id)}
+                  >
+                    Deny
+                  </button>
+                  <button
+                    id={`acknowledge-button-${user.id}`}
+                    className="toggle-verification acknowledge"
+                    style={{ display: user.verified ? "none" : "block" }}
+                    onClick={() => acknowledge(user.id)}
+                  >
+                    Acknowledge
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

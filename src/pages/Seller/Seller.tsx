@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { SellerItem } from "../../types/item";
 import { SellerInfo } from "../../types/user";
 import { itemApi, sellerApi } from "../../api-helpers";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ItemCategoryResponse } from "../../types/api-responses";
 import Card from "../../components/Card/Card";
 
@@ -47,12 +47,12 @@ const Seller = () => {
       }
 
       if (sellerItems.length === 0) {
-        const itemsResponse = await itemApi.getItems({ sellerId });
-        const approvedItems = itemsResponse.data.filter((item) =>
-          (foundSeller.itemCategories ?? []).includes(item.categoryId)
-        );
-        setSellerItems(approvedItems);
-        setFilteredItems(approvedItems);
+        const itemsResponse = await itemApi.getItems({ sellerId, isAvailable: true });
+        const items = itemsResponse.data
+          .filter((item) => (foundSeller.itemCategories ?? []).includes(item.categoryId))
+          .sort((a, b) => a.name.localeCompare(b.name));
+        setSellerItems(items);
+        setFilteredItems(items);
       }
 
       setSeller(foundSeller);

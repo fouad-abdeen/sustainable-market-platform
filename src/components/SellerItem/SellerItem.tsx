@@ -67,9 +67,14 @@ const SellerItem: React.FC<SellerItemProps> = ({
         }
 
         setCategories(response.data);
+        if (category.name === "All" && response.data.length > 0) {
+          setUpdatedItem({ ...updatedItem, categoryId: response.data[0].id });
+        }
       } catch (error) {
         alert(error);
       }
+    } else if (category.name === "All" && itemCategories.length > 0) {
+      setUpdatedItem({ ...updatedItem, categoryId: itemCategories[0].id });
     }
 
     setIsEditing(true);
@@ -141,6 +146,7 @@ const SellerItem: React.FC<SellerItemProps> = ({
               <label>Name:</label>
               <input
                 type="text"
+                className="form-input"
                 value={updatedItem.name}
                 onChange={(e) => setUpdatedItem({ ...updatedItem, name: e.target.value })}
               />
@@ -148,6 +154,7 @@ const SellerItem: React.FC<SellerItemProps> = ({
             <div>
               <label>Description:</label>
               <textarea
+                className="form-input"
                 value={updatedItem.description}
                 onChange={(e) =>
                   setUpdatedItem({
@@ -161,6 +168,7 @@ const SellerItem: React.FC<SellerItemProps> = ({
               <label>Price:</label>
               <input
                 type="number"
+                className="form-input"
                 value={updatedItem.price}
                 onChange={(e) => setUpdatedItem({ ...updatedItem, price: +e.target.value })}
               />
@@ -183,6 +191,7 @@ const SellerItem: React.FC<SellerItemProps> = ({
               <label>Quantity:</label>
               <input
                 type="number"
+                className="form-input"
                 value={updatedItem.quantity}
                 onChange={(e) => setUpdatedItem({ ...updatedItem, quantity: +e.target.value })}
               />
@@ -191,6 +200,7 @@ const SellerItem: React.FC<SellerItemProps> = ({
               <label>Is Available:</label>
               <input
                 type="checkbox"
+                className="form-input"
                 checked={updatedItem.isAvailable}
                 onChange={(e) =>
                   setUpdatedItem({
@@ -204,6 +214,7 @@ const SellerItem: React.FC<SellerItemProps> = ({
               <label>Image URL:</label>
               <input
                 type="text"
+                className="form-input"
                 value={updatedItem.imageUrl}
                 onChange={(e) => setUpdatedItem({ ...updatedItem, imageUrl: e.target.value })}
               />
@@ -215,12 +226,12 @@ const SellerItem: React.FC<SellerItemProps> = ({
             {userRole === UserRole.ADMIN && <p>Seller: {seller.name}</p>}
             <p>Price: ${item.price}</p>
             <p>
-              Category:
+              Category:{" "}
               {category.name === "All" ? (
                 <span style={{ color: "#dc3545", fontSize: "16px" }}>
                   {userRole === UserRole.ADMIN
-                    ? " Item has no category and is not displayed on the seller's public page"
-                    : " Your item has no category and will not be displayed on your public page." +
+                    ? "Item has no category and is not displayed to customers."
+                    : "Your item has no category and is not displayed to customers." +
                       " Update the category once we assign you the needed item categories for your profile." +
                       " Please get in touch with us if needed."}
                 </span>
@@ -228,6 +239,12 @@ const SellerItem: React.FC<SellerItemProps> = ({
                 category.name
               )}
             </p>
+            {item.quantity === 0 && <p style={{ color: "#dc3545" }}>Item is out of stock.</p>}
+            {!item.isAvailable && (
+              <p style={{ color: "#dc3545" }}>
+                Item is not available and is not displayed to customers.
+              </p>
+            )}
           </div>
         )}
         <div className="actions" style={{ marginLeft: "100px" }}>

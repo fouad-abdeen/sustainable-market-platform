@@ -16,7 +16,7 @@ const SellerInfoModal: React.FC<SellerInfoModalProps> = ({ sellerId, sellerInfo,
   const { categories } = useContext(CategoriesContext);
   const [availableItemCategories, setAvailableItemCategories] = useState<CategoryResponse[]>([]);
   const [availableServiceCategories, setAvailableServiceCategories] = useState<CategoryResponse[]>(
-    [],
+    []
   );
   const [itemCategories, setItemCategories] = useState<CategoryResponse[]>([]);
   const [serviceCategory, setServiceCategory] = useState<CategoryResponse>({} as CategoryResponse);
@@ -24,13 +24,14 @@ const SellerInfoModal: React.FC<SellerInfoModalProps> = ({ sellerId, sellerInfo,
   useEffect(() => {
     if (categories.length > 0) {
       const currentItemCategories = categories.filter(
-        (category) => category.type === CategoryType.ITEM,
+        (category) => category.type === CategoryType.ITEM
       );
 
       setAvailableItemCategories(
         currentItemCategories.filter(
-          (category) => !(sellerInfo.itemCategories ?? []).includes(category.id),
-        ),
+          (category) =>
+            !(sellerInfo.itemCategories ?? []).includes(category.id) && category.name !== "All"
+        )
       );
 
       setItemCategories(
@@ -38,14 +39,14 @@ const SellerInfoModal: React.FC<SellerInfoModalProps> = ({ sellerId, sellerInfo,
           const category = currentItemCategories.find((category) => category.id === categoryId);
 
           return category ?? ({} as CategoryResponse);
-        }),
+        })
       );
 
       setAvailableServiceCategories(
         categories.filter(
           (category) =>
-            category.type === CategoryType.SERVICE && category.id !== sellerInfo.categoryId,
-        ),
+            category.type === CategoryType.SERVICE && category.id !== sellerInfo.categoryId
+        )
       );
 
       const category = categories.find((category) => category.id === sellerInfo.categoryId);
@@ -78,7 +79,7 @@ const SellerInfoModal: React.FC<SellerInfoModalProps> = ({ sellerId, sellerInfo,
       }
 
       const newCategory = availableServiceCategories.find(
-        (category) => category.id === newCategoryId,
+        (category) => category.id === newCategoryId
       );
 
       if (newCategory) {
@@ -113,7 +114,7 @@ const SellerInfoModal: React.FC<SellerInfoModalProps> = ({ sellerId, sellerInfo,
       if (newCategory) {
         setItemCategories([...itemCategories, newCategory]);
         setAvailableItemCategories(
-          availableItemCategories.filter((category) => category.id !== newCategoryId),
+          availableItemCategories.filter((category) => category.id !== newCategoryId)
         );
       }
     }

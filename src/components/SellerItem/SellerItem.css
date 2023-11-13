@@ -24,8 +24,10 @@
 }
 
 .seller-item textarea {
-  min-width: 150px;
-  max-width: 500px;
+  min-width: 200px;
+  max-width: 600px;
+  min-height: 100px;
+  max-height: 200px;
 }
 
 .seller-item input[type="text"],
