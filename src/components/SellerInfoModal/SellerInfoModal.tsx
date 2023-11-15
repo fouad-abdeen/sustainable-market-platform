@@ -146,7 +146,7 @@ const SellerInfoModal: React.FC<SellerInfoModalProps> = ({ sellerId, sellerInfo,
     <>
       <div id={`M${sellerId}`} className="modal">
         <div className="modal-content">
-          <h4 className="close" onClick={(e) => onClose(sellerId)}>
+          <h4 className="close" onClick={() => onClose(sellerId)}>
             &times;
           </h4>
 
@@ -199,10 +199,7 @@ const SellerInfoModal: React.FC<SellerInfoModalProps> = ({ sellerId, sellerInfo,
                   <h4 className="item-categories-field">
                     {index + 1}. {category.name}
                   </h4>
-                  <h4
-                    style={{ cursor: "pointer" }}
-                    onClick={(e) => removeItemCategory(category.id)}
-                  >
+                  <h4 style={{ cursor: "pointer" }} onClick={() => removeItemCategory(category.id)}>
                     &times;
                   </h4>
                 </div>

@@ -15,8 +15,10 @@ export interface WishlistItem {
   name: string;
   description: string;
   price: number;
+  quantity: number;
+  isAvailable: boolean;
+  sellerId: string;
   imageUrl?: string;
-  sellerId?: string;
 }
 
 export interface CartItem {
