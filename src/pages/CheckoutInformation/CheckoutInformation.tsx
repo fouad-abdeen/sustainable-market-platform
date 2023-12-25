@@ -1,6 +1,6 @@
 import "./CheckoutInformation.css";
 import React, { useContext, useEffect, useState } from "react";
-import { CustomerProfile, User, UserRole } from "../../types/user";
+import { CustomerProfile, UserRole } from "../../types/user";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import { CheckoutContext } from "../../contexts/CheckoutContext";

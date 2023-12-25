@@ -1,5 +1,4 @@
 import "./Home.css";
-import DefaultLogoImage from "../../assets/default-seller-image.jpg";
 import { useContext } from "react";
 import { SellersContext } from "../../contexts/SellersContext";
 import { useNavigate } from "react-router-dom";
@@ -48,11 +47,15 @@ function Home() {
           {sellers
             .slice(0, 3)
             .sort((a, b) => a.name.localeCompare(b.name))
-            .map((seller) => (
+            .map((seller, index) => (
               <div className="seller-card" key={seller.id}>
                 <img
                   title="Click to view seller details"
-                  src={seller.logoUrl ?? DefaultLogoImage}
+                  src={
+                    index === 0
+                      ? "http://localhost:3030/files?id=658726af06f1b73c16aacf62"
+                      : "http://localhost:3030/files?id=65872f474901e2e4d79951f4"
+                  }
                   style={{ objectFit: "contain", width: "200px", height: "200px" }}
                   onClick={() => navigate(`sellers/${seller.id}`)}
                 />

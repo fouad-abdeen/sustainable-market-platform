@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { SellerItem } from "../../types/item";
 import { SellerInfo } from "../../types/user";
 import { itemApi, sellerApi } from "../../api-helpers";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ItemCategoryResponse } from "../../types/api-responses";
 import Card from "../../components/Card/Card";
 

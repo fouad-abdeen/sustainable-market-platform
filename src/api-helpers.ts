@@ -32,7 +32,7 @@ import { WishlistItem } from "./types/item";
 import { SellerInfo, User } from "./types/user";
 
 const defaultConfiguration = {
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://sustainabe-market-server.onrender.com",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
